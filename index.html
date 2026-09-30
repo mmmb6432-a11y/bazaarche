@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>بازارچه | خرید و فروش</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+
+    <div class="logo">
+      🛒 بازارچه
+    </div>
+
+    <button class="add-btn" onclick="openForm()">
+      ＋ ثبت آگهی
+    </button>
+
+  </header>
+
+
+  <!-- Hero -->
+  <section class="hero">
+
+    <h1>خرید و فروش آسان</h1>
+
+    <p>
+      هر چیزی را که می‌خواهی پیدا کن یا آگهی خودت را ثبت کن.
+    </p>
+
+    <div class="search-box">
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="جستجوی کالا..."
+        oninput="searchProducts()"
+      >
+
+      <button onclick="searchProducts()">
+        🔍
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- Categories -->
+  <section class="categories">
+
+    <button onclick="filterCategory('همه')">
+      همه
+    </button>
+
+    <button onclick="filterCategory('موبایل')">
+      📱 موبایل
+    </button>
+
+    <button onclick="filterCategory('موتر')">
+      🚗 موتر
+    </button>
+
+    <button onclick="filterCategory('خانه')">
+      🏠 خانه
+    </button>
+
+    <button onclick="filterCategory('لباس')">
+      👕 لباس
+    </button>
+
+    <button onclick="filterCategory('الکترونیک')">
+      💻 الکترونیک
+    </button>
+
+    <button onclick="filterCategory('سایر')">
+      📦 سایر
+    </button>
+
+  </section>
+
+
+  <!-- Products -->
+  <main class="container">
+
+    <div class="section-title">
+
+      <h2>
+        آگهی‌های جدید
+      </h2>
+
+      <span id="resultCount"></span>
+
+    </div>
+
+    <div id="products" class="products"></div>
+
+  </main>
+
+
+  <!-- Add Product Modal -->
+  <div id="formModal" class="modal">
+
+    <div class="modal-content">
+
+      <button
+        class="close"
+        onclick="closeForm()">
+        ×
+      </button>
+
+      <h2>
+        ثبت آگهی
+      </h2>
+
+      <p class="form-info">
+        مشخصات کالای خود را وارد کنید.
+      </p>
+
+
+      <label>
+        نام کالا
+      </label>
+
+      <input
+        id="title"
+        type="text"
+        placeholder="مثلاً iPhone 13"
+      >
+
+
+      <label>
+        قیمت
+      </label>
+
+      <input
+        id="price"
+        type="number"
+        placeholder="مثلاً 25000"
+      >
+
+
+      <label>
+        دسته‌بندی
+      </label>
+
+      <select id="category">
+
+        <option value="موبایل">
+          📱 موبایل
+        </option>
+
+        <option value="موتر">
+          🚗 موتر
+        </option>
+
+        <option value="خانه">
+          🏠 خانه
+        </option>
+
+        <option value="لباس">
+          👕 لباس
+        </option>
+
+        <option value="الکترونیک">
+          💻 الکترونیک
+        </option>
+
+        <option value="سایر">
+          📦 سایر
+        </option>
+
+      </select>
+
+
+      <label>
+        شهر / منطقه
+      </label>
+
+      <input
+        id="location"
+        type="text"
+        placeholder="مثلاً زرنج، اتفاق آباد"
+      >
+
+
+      <label>
+        شماره تماس
+      </label>
+
+      <input
+        id="phone"
+        type="tel"
+        placeholder="مثلاً 0700000000"
+      >
+
+
+      <label>
+        لینک عکس
+      </label>
+
+      <input
+        id="image"
+        type="url"
+        placeholder="https://..."
+      >
+
+
+      <label>
+        توضیحات
+      </label>
+
+      <textarea
+        id="description"
+        placeholder="توضیحات کالا..."
+      ></textarea>
+
+
+      <button
+        class="submit-btn"
+        onclick="addProduct()">
+
+        ثبت آگهی
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <h3>
+      🛒 بازارچه
+    </h3>
+
+    <p>
+      خرید و فروش آسان
+    </p>
+
+    <p class="copyright">
+      © 2026 بازارچه
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
